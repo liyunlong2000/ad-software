@@ -1,0 +1,10 @@
+account-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-tag {
+  color: #666;
+  font-size: 14px;
+}
