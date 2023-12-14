@@ -30,31 +30,31 @@ $(function() {
     }]
   };
 
-  var equipmentDistributionData = {
-      labels: ["apple(28.76%)", "huawei(28.06%)", "xiaomi(16.05%)", "vivo(9.57%)", "oppo(7.75%)", "其它(9.79%)"],
-      datasets: [{
-        label: '# of Votes',
-        data: [28, 28.06, 16.05, 9.57, 7.75, 9.79],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255,99,132,1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1,
-        fill: false
-      }]
-    };
+  // var equipmentDistributionData = {
+  //     labels: ["apple(28.76%)", "huawei(28.06%)", "xiaomi(16.05%)", "vivo(9.57%)", "oppo(7.75%)", "其它(9.79%)"],
+  //     datasets: [{
+  //       label: '# of Votes',
+  //       data: [28, 28.06, 16.05, 9.57, 7.75, 9.79],
+  //       backgroundColor: [
+  //         'rgba(255, 99, 132, 0.2)',
+  //         'rgba(54, 162, 235, 0.2)',
+  //         'rgba(255, 206, 86, 0.2)',
+  //         'rgba(75, 192, 192, 0.2)',
+  //         'rgba(153, 102, 255, 0.2)',
+  //         'rgba(255, 159, 64, 0.2)'
+  //       ],
+  //       borderColor: [
+  //         'rgba(255,99,132,1)',
+  //         'rgba(54, 162, 235, 1)',
+  //         'rgba(255, 206, 86, 1)',
+  //         'rgba(75, 192, 192, 1)',
+  //         'rgba(153, 102, 255, 1)',
+  //         'rgba(255, 159, 64, 1)'
+  //       ],
+  //       borderWidth: 1,
+  //       fill: false
+  //     }]
+  //   };
 
 
 function randomData() {
@@ -62,68 +62,63 @@ function randomData() {
 };
 
 
-var dataMap =[
-    {name: '北京',value: '100' },{name: '天津',value: randomData() },
-    {name: '上海',value: randomData() },{name: '重庆',value: randomData() },
-    {name: '河北',value: randomData() },{name: '河南',value: randomData() },
-    {name: '云南',value: randomData() },{name: '辽宁',value: randomData() },
-    {name: '黑龙江',value: randomData() },{name: '湖南',value: randomData() },
-    {name: '安徽',value: randomData() },{name: '山东',value: randomData() },
-    {name: '新疆',value: randomData() },{name: '江苏',value: randomData() },
-    {name: '浙江',value: randomData() },{name: '江西',value: randomData() },
-    {name: '湖北',value: randomData() },{name: '广西',value: randomData() },
-    {name: '甘肃',value: randomData() },{name: '山西',value: randomData() },
-    {name: '内蒙古',value: randomData() },{name: '陕西',value: randomData() },
-    {name: '吉林',value: randomData() },{name: '福建',value: randomData() },
-    {name: '贵州',value: randomData() },{name: '广东',value: randomData() },
-    {name: '青海',value: randomData() },{name: '西藏',value: randomData() },
-    {name: '四川',value: randomData() },{name: '宁夏',value: randomData() },
-    {name: '海南',value: randomData() },{name: '台湾',value: randomData() },
-    {name: '香港',value: randomData() },{name: '澳门',value: randomData() },{name: '南海诸岛',value: randomData() }
-];
+// var dataMap =[
+//     {name: '北京',value: '100' },{name: '天津',value: randomData() },
+//     {name: '上海',value: randomData() },{name: '重庆',value: randomData() },
+//     {name: '河北',value: randomData() },{name: '河南',value: randomData() },
+//     {name: '云南',value: randomData() },{name: '辽宁',value: randomData() },
+//     {name: '黑龙江',value: randomData() },{name: '湖南',value: randomData() },
+//     {name: '安徽',value: randomData() },{name: '山东',value: randomData() },
+//     {name: '新疆',value: randomData() },{name: '江苏',value: randomData() },
+//     {name: '浙江',value: randomData() },{name: '江西',value: randomData() },
+//     {name: '湖北',value: randomData() },{name: '广西',value: randomData() },
+//     {name: '甘肃',value: randomData() },{name: '山西',value: randomData() },
+//     {name: '内蒙古',value: randomData() },{name: '陕西',value: randomData() },
+//     {name: '吉林',value: randomData() },{name: '福建',value: randomData() },
+//     {name: '贵州',value: randomData() },{name: '广东',value: randomData() },
+//     {name: '青海',value: randomData() },{name: '西藏',value: randomData() },
+//     {name: '四川',value: randomData() },{name: '宁夏',value: randomData() },
+//     {name: '海南',value: randomData() },{name: '台湾',value: randomData() },
+//     {name: '香港',value: randomData() },{name: '澳门',value: randomData() },{name: '南海诸岛',value: randomData() }
+// ];
 
-  var geographicalDistributionOptions={
-      tooltip: {
-//        formatter: function (params) {
-//              var info = '<p style="font-size:18px">' + params.name + '</p>'
-//              return info;
-//          },
-//          backgroundColor: "#ff7f50",//提示标签背景颜色
-//          textStyle: { color: "#fff" } //提示标签字体颜色
-      },
-    //左侧小导航图标
-      visualMap: {
-          show : true,
-          left: 10,
-          bottom: 143,
-          splitList: [
-              {start: 500, end:600},{start: 400, end: 500},
-              {start: 300, end: 400},{start: 200, end: 300},
-              {start: 100, end: 200},{start: 0, end: 100},
-          ],
-          color: ['#5475f5', '#9feaa5', '#85daef','#74e2ca', '#e6ac53', '#9fb5ea']
-      },
-      grid: {
-              left: '10%',  // 设置表格距离左边框的距离
-              top: '20%',   // 设置表格距离顶部边框的距离
-      },
-      series: [
-          {
-              name: '中国',
-              type: 'map',
-              mapType: 'china',
-              label: {
-                  normal: {
-                      show: false,//显示省份标签
-                  },
-                  emphasis: {
-                      show: true,//对应的鼠标悬浮效果
-                  }
-              },
-              data: dataMap
-          }
-      ]
-    };
+  // var geographicalDistributionOptions={
+  //     tooltip: {
+
+  //     },
+  //   //左侧小导航图标
+  //     visualMap: {
+  //         show : true,
+  //         left: 10,
+  //         bottom: 143,
+  //         splitList: [
+  //             {start: 500, end:600},{start: 400, end: 500},
+  //             {start: 300, end: 400},{start: 200, end: 300},
+  //             {start: 100, end: 200},{start: 0, end: 100},
+  //         ],
+  //         color: ['#5475f5', '#9feaa5', '#85daef','#74e2ca', '#e6ac53', '#9fb5ea']
+  //     },
+  //     grid: {
+  //             left: '10%',  // 设置表格距离左边框的距离
+  //             top: '20%',   // 设置表格距离顶部边框的距离
+  //     },
+  //     series: [
+  //         {
+  //             name: '中国',
+  //             type: 'map',
+  //             mapType: 'china',
+  //             label: {
+  //                 normal: {
+  //                     show: false,//显示省份标签
+  //                 },
+  //                 emphasis: {
+  //                     show: true,//对应的鼠标悬浮效果
+  //                 }
+  //             },
+  //             data: dataMap
+  //         }
+  //     ]
+  //   };
 
   var multiLineData = {
     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
@@ -172,25 +167,25 @@ var dataMap =[
         radius: 0
       }
     }
-
   };
-  var equipmentDistributionOptions = {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
-      },
-      legend: {
-        display: false
-      },
-      elements: {
-        point: {
-          radius: 0
-        }
-      }
-    };
+  
+  // var equipmentDistributionOptions = {
+  //     scales: {
+  //       yAxes: [{
+  //         ticks: {
+  //           beginAtZero: true
+  //         }
+  //       }]
+  //     },
+  //     legend: {
+  //       display: false
+  //     },
+  //     elements: {
+  //       point: {
+  //         radius: 0
+  //       }
+  //     }
+  //   };
   var doughnutPieData = {
     datasets: [{
       data: [30, 40, 30],
@@ -228,85 +223,85 @@ var dataMap =[
     }
   };
 
-  var ageDistributionData = {
-      datasets: [{
-        data: [49.1, 24.56, 16.57,9.78],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.5)',
-          'rgba(54, 162, 235, 0.5)',
-          'rgba(255, 206, 86, 0.5)',
-          'rgba(75, 192, 192, 0.5)',
-          'rgba(153, 102, 255, 0.5)',
-          'rgba(255, 159, 64, 0.5)'
-        ],
-        borderColor: [
-          'rgba(255,99,132,1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-        ],
-      }],
+  // var ageDistributionData = {
+  //     datasets: [{
+  //       data: [49.1, 24.56, 16.57,9.78],
+  //       backgroundColor: [
+  //         'rgba(255, 99, 132, 0.5)',
+  //         'rgba(54, 162, 235, 0.5)',
+  //         'rgba(255, 206, 86, 0.5)',
+  //         'rgba(75, 192, 192, 0.5)',
+  //         'rgba(153, 102, 255, 0.5)',
+  //         'rgba(255, 159, 64, 0.5)'
+  //       ],
+  //       borderColor: [
+  //         'rgba(255,99,132,1)',
+  //         'rgba(54, 162, 235, 1)',
+  //         'rgba(255, 206, 86, 1)',
+  //         'rgba(75, 192, 192, 1)',
+  //         'rgba(153, 102, 255, 1)',
+  //         'rgba(255, 159, 64, 1)'
+  //       ],
+  //     }],
 
-      // These labels appear in the legend and in the tooltips when hovering different arcs
-      labels: [
-        '18-24(49.71%)',
-        '0-17(24.56%)',
-        '25-30(16.57%)',
-        '30以上(9.78%)'
-      ]
-    };
+  //     // These labels appear in the legend and in the tooltips when hovering different arcs
+  //     labels: [
+  //       '18-24(49.71%)',
+  //       '0-17(24.56%)',
+  //       '25-30(16.57%)',
+  //       '30以上(9.78%)'
+  //     ]
+  //   };
 
-    var ageDistributionOptions = {
-      responsive: true,
-      animation: {
-        animateScale: true,
-        animateRotate: true
-      },
-      legend: {
-            position: 'right'
-      },
-    };
+  //   var ageDistributionOptions = {
+  //     responsive: true,
+  //     animation: {
+  //       animateScale: true,
+  //       animateRotate: true
+  //     },
+  //     legend: {
+  //           position: 'right'
+  //     },
+  //   };
 
-    var genderDistributionData = {
-      datasets: [{
-        data: [30, 70],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.5)',
-          'rgba(54, 162, 235, 0.5)',
-          'rgba(255, 206, 86, 0.5)',
-          'rgba(75, 192, 192, 0.5)',
-          'rgba(153, 102, 255, 0.5)',
-          'rgba(255, 159, 64, 0.5)'
-        ],
-        borderColor: [
-          'rgba(255,99,132,1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-        ],
-      }],
+    // var genderDistributionData = {
+    //   datasets: [{
+    //     data: [30, 70],
+    //     backgroundColor: [
+    //       'rgba(255, 99, 132, 0.5)',
+    //       'rgba(54, 162, 235, 0.5)',
+    //       'rgba(255, 206, 86, 0.5)',
+    //       'rgba(75, 192, 192, 0.5)',
+    //       'rgba(153, 102, 255, 0.5)',
+    //       'rgba(255, 159, 64, 0.5)'
+    //     ],
+    //     borderColor: [
+    //       'rgba(255,99,132,1)',
+    //       'rgba(54, 162, 235, 1)',
+    //       'rgba(255, 206, 86, 1)',
+    //       'rgba(75, 192, 192, 1)',
+    //       'rgba(153, 102, 255, 1)',
+    //       'rgba(255, 159, 64, 1)'
+    //     ],
+    //   }],
 
-      // These labels appear in the legend and in the tooltips when hovering different arcs
-      labels: [
-        '女性(39.14%)',
-        '男性(60.86%)',
-      ]
-    };
+    //   // These labels appear in the legend and in the tooltips when hovering different arcs
+    //   labels: [
+    //     '女性(39.14%)',
+    //     '男性(60.86%)',
+    //   ]
+    // };
 
-    var genderDistributionOptions = {
-        responsive: true,
-        animation: {
-          animateScale: true,
-          animateRotate: true
-        },
-        legend: {
-          position: 'right'
-        },
-      };
+    // var genderDistributionOptions = {
+    //     responsive: true,
+    //     animation: {
+    //       animateScale: true,
+    //       animateRotate: true
+    //     },
+    //     legend: {
+    //       position: 'right'
+    //     },
+    //   };
 
   var areaData = {
     labels: ["2013", "2014", "2015", "2016", "2017"],
@@ -473,15 +468,15 @@ var dataMap =[
     });
   }
 
-   if ($("#equipmentDistributionChart").length) {
-      var equipmentDistributionChartCanvas = $("#equipmentDistributionChart").get(0).getContext("2d");
-      // This will get the first returned node in the jQuery collection.
-      var equipmentDistributionChart = new Chart(equipmentDistributionChartCanvas, {
-        type: 'bar',
-        data: equipmentDistributionData,
-        options: equipmentDistributionOptions
-      });
-    }
+  //  if ($("#equipmentDistributionChart").length) {
+  //     var equipmentDistributionChartCanvas = $("#equipmentDistributionChart").get(0).getContext("2d");
+  //     // This will get the first returned node in the jQuery collection.
+  //     var equipmentDistributionChart = new Chart(equipmentDistributionChartCanvas, {
+  //       type: 'bar',
+  //       data: equipmentDistributionData,
+  //       options: equipmentDistributionOptions
+  //     });
+  //   }
 
   if ($("#lineChart").length) {
     var lineChartCanvas = $("#lineChart").get(0).getContext("2d");
@@ -520,29 +515,29 @@ var dataMap =[
     });
   }
 
-  if ($("#ageDistributionChart").length) {
-      var ageDistributionChartCanvas = $("#ageDistributionChart").get(0).getContext("2d");
-      var ageDistributionChart = new Chart(ageDistributionChartCanvas, {
-        type: 'doughnut',
-        data: ageDistributionData,
-        options: ageDistributionOptions
-      });
-    }
+  // if ($("#ageDistributionChart").length) {
+  //     var ageDistributionChartCanvas = $("#ageDistributionChart").get(0).getContext("2d");
+  //     var ageDistributionChart = new Chart(ageDistributionChartCanvas, {
+  //       type: 'doughnut',
+  //       data: ageDistributionData,
+  //       options: ageDistributionOptions
+  //     });
+  //   }
 
-  if ($("#genderDistributionChart").length) {
-      var genderDistributionChartCanvas = $("#genderDistributionChart").get(0).getContext("2d");
-      var genderDistributionChart = new Chart(genderDistributionChartCanvas, {
-        type: 'doughnut',
-        data: genderDistributionData,
-        options: genderDistributionOptions
-      });
-    }
+  // if ($("#genderDistributionChart").length) {
+  //     var genderDistributionChartCanvas = $("#genderDistributionChart").get(0).getContext("2d");
+  //     var genderDistributionChart = new Chart(genderDistributionChartCanvas, {
+  //       type: 'doughnut',
+  //       data: genderDistributionData,
+  //       options: genderDistributionOptions
+  //     });
+  //   }
 
 
-    //初始化echarts实例
-    var geographicalDistributionChart = echarts.init(document.getElementById('geographicalDistributionChart'));
-    //使用制定的配置项和数据显示图表
-    geographicalDistributionChart.setOption(geographicalDistributionOptions);
+    // //初始化echarts实例
+    // var geographicalDistributionChart = echarts.init(document.getElementById('geographicalDistributionChart'));
+    // //使用制定的配置项和数据显示图表
+    // geographicalDistributionChart.setOption(geographicalDistributionOptions);
 
   if ($("#pieChart").length) {
     var pieChartCanvas = $("#pieChart").get(0).getContext("2d");
