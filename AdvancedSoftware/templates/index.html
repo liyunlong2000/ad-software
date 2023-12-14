@@ -59,7 +59,7 @@
                   <i class="mdi mdi-magnify"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
+              <input id="search-box" type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
             </div>
           </li>
         </ul>
@@ -185,13 +185,13 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index">
+            <a id="home_href" class="nav-link" href="index">
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">主页</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="fanPortrait">
+            <a id="fan_href" class="nav-link" href="fanPortrait">
               <i class="mdi mdi-chart-pie menu-icon"></i>
               <span class="menu-title">粉丝画像</span>
             </a>
@@ -257,15 +257,15 @@
                             <h4 class="me-2 mb-2">良田田田田</h4>
                             <div class="account-info mb-2">
                               <small class="mb-1 text-muted">账 号 信 息</small>
-                              <span class="info-tag text-black">480959917</span>
+                              <span id="user_id" class="info-tag text-black">480959917</span>
                             </div>
                             <div class="account-info mb-2">
                               <small class="mb-1 text-muted">账 号 简 介</small>
-                              <span class="info-tag text-black">各花各有各花香</span>
+                              <span id="user_brief" class="info-tag text-black">各花各有各花香</span>
                             </div>
                             <div class="account-info mb-2">
                               <small class="mb-1 text-muted">标&emsp;&emsp;&ensp;签</small>
-                              <span class="info-tag text-black">暂无</span>
+                              <span id="user_label" class="info-tag text-black">暂无</span>
                             </div>
                           </div>
                         </div>
@@ -276,21 +276,21 @@
                           <i class="mdi mdi-movie me-3 icon-lg text-danger"></i>
                           <div class="d-flex flex-column justify-content-around">
                             <small class="mb-1 text-muted">七日作品数</small>
-                            <h5 class="me-2 mb-0">577545</h5>
+                            <h5 id="works_num" class="me-2 mb-0">577545</h5>
                           </div>
                         </div>
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-eye me-3 icon-lg text-success"></i>
                           <div class="d-flex flex-column justify-content-around">
                             <small class="mb-1 text-muted">七日观看数</small>
-                            <h5 class="me-2 mb-0">9833550</h5>
+                            <h5 id="views_num" class="me-2 mb-0">9833550</h5>
                           </div>
                         </div>
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-download me-3 icon-lg text-warning"></i>
                           <div class="d-flex flex-column justify-content-around">
                             <small class="mb-1 text-muted">七日下载量</small>
-                            <h5 class="me-2 mb-0">2233783</h5>
+                            <h5 id="downloads_num" class="me-2 mb-0">2233783</h5>
                           </div>
                         </div>
                         <div class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
@@ -298,7 +298,7 @@
                           <i class="mdi mdi-message-text me-3 icon-lg text-gray"></i>
                           <div class="d-flex flex-column justify-content-around">
                             <small class="mb-1 text-muted">七日评论数</small>
-                            <h5 class="me-2 mb-0">3497843</h5>
+                            <h5 id="comments_num" class="me-2 mb-0">3497843</h5>
                           </div>
                         </div>
                       </div>
@@ -329,13 +329,13 @@
                                 <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-1 item">
                                   <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">近期发布作品</small>
-                                    <h5 class="me-2 mb-0">25</h5>
+                                    <h5 id="recent_works_num" class="me-2 mb-0">25</h5>
                                   </div>
                                 </div>
                                 <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-1 item">
                                   <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">爆款数</small>
-                                    <h5 class="me-2 mb-0">25</h5>
+                                    <h5 id="hot_works_num" class="me-2 mb-0">25</h5>
                                   </div>
                                 </div>
                               </div>
@@ -354,7 +354,7 @@
                                 <div class="d-flex flex-grow-1 align-items-center justify-content-center p-1 item">
                                   <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">新增粉丝</small>
-                                    <h5 class="me-2 mb-0">2.9w</h5>
+                                    <h5 id="fans_num" class="me-2 mb-0">2.9w</h5>
                                   </div>
                                 </div>
                               </div>
@@ -373,19 +373,19 @@
                                 <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-1 item">
                                   <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">播放量均值</small>
-                                    <h5 class="me-2 mb-0">30.09w</h5>
+                                    <h5 id="avg_playback" class="me-2 mb-0">30.09w</h5>
                                   </div>
                                 </div>
                                 <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-1 item">
                                   <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">互动量均值</small>
-                                    <h5 class="me-2 mb-0">1.32w</h5>
+                                    <h5 id="avg_interaction" class="me-2 mb-0">1.32w</h5>
                                   </div>
                                 </div>
                                 <div class="d-flex flex-grow-1 align-items-center justify-content-center p-1 item">
                                   <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">互动率</small>
-                                    <h5 class="me-2 mb-0">0.0429</h5>
+                                    <h5 id="interaction_rate" class="me-2 mb-0">0.0429</h5>
                                   </div>
                                 </div>
                               </div>
@@ -420,19 +420,19 @@
                                 <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-0 item">
                                   <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">商业作品占比</small>
-                                    <h5 class="me-2 mb-0">0</h5>
+                                    <h5 id="commercial_work" class="me-2 mb-0">0</h5>
                                   </div>
                                 </div>
                                 <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-0 item">
                                   <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">近期推广商品</small>
-                                    <h5 class="me-2 mb-0">0</h5>
+                                    <h5 id="recent_promotions" class="me-2 mb-0">0</h5>
                                   </div>
                                 </div>
                                 <div class="d-flex py-3 flex-grow-1 align-items-center justify-content-center p-0 item">
                                   <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">近期挂链广告</small>
-                                    <h5 class="me-2 mb-0">0</h5>
+                                    <h5 id="recent_lanyard_ads" class="me-2 mb-0">0</h5>
                                   </div>
                                 </div>
                               </div>
@@ -451,13 +451,13 @@
                                 <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-1 item">
                                   <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">植入视频</small>
-                                    <h5 class="me-2 mb-0">400</h5>
+                                    <h5 id="implant_video" class="me-2 mb-0">400</h5>
                                   </div>
                                 </div>
                                 <div class="d-flex flex-grow-1 align-items-center justify-content-center p-1 item">
                                   <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">定制视频</small>
-                                    <h5 class="me-2 mb-0">700</h5>
+                                    <h5 id="customized_video" class="me-2 mb-0">700</h5>
                                   </div>
                                 </div>
                               </div>
@@ -476,13 +476,13 @@
                                 <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-1 item">
                                   <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">CPE</small>
-                                    <h5 class="me-2 mb-0">33.11</h5>
+                                    <h5 id="cpe" class="me-2 mb-0">33.11</h5>
                                   </div>
                                 </div>
                                 <div class="d-flex flex-grow-1 align-items-center justify-content-center p-1 item">
                                   <div class="d-flex flex-column justify-content-around">
                                     <small class="mb-1 text-muted">CPM</small>
-                                    <h5 class="me-2 mb-0">752.28</h5>
+                                    <h5  id="cpm" class="me-2 mb-0">752.28</h5>
                                   </div>
                                 </div>
                               </div>
@@ -533,6 +533,17 @@
   <!-- End custom js for this page-->
 
   <script src="static/js/jquery.cookie.js" type="text/javascript"></script>
+  <script src="static/js/info.js"></script>
+
+  <!-- 搜索框 事件-->
+  <script>
+
+    $('#search-box').keypress(function (event){
+      if (event.keyCode == 13) {
+        updateUserInfo($("#search-box").val())
+      }
+    })
+  </script>
 </body>
 
 </html>

@@ -2,15 +2,31 @@ from django.shortcuts import render
 from django.http import JsonResponse
 import random
 
+current_id=None
+
 def index(request):
     return render(request, "index.html")
+
+def search(request):
+    id=request.GET.get("user_id")
+    current_id=id
+    print("get id from frontend:",id)
+    print("current_id:",current_id)
+    return JsonResponse(data={})
 
 def fanPortrait(request):
     return render(request, "fanPortrait.html")
 
 def genderDistributionChart(request):
     labels = ['男性','女性','中性']
-    data = [80,0,20]
+    data=[]
+    user_id = request.GET.get('user_id')
+    print("gender id:",user_id)
+    if user_id=="":
+        data = [80,0,20]
+    else:
+        data = [40,40,20]
+    print(data)
     return JsonResponse(data={'labels':labels,'data':data})
 
 def ageDistributionChart(request):
@@ -52,3 +68,12 @@ def geographicalDistributionChart(request):
     {'name': '香港','value': randomData() },{'name': '澳门','value': randomData() },
     {'name': '南海诸岛','value': randomData() }]
     return JsonResponse(data={'dataMap':dataMap})
+
+def updateUserInfo(request):
+    user_id = request.GET.get('user_id')
+    print("gender id:",user_id)
+    data={}
+    data['user_id']='313009293'
+    data['user_brief']='暂无'
+    data['user_label']='暂无'
+    return JsonResponse(data=data)

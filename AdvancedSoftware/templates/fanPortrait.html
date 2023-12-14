@@ -38,7 +38,7 @@
                   <i class="mdi mdi-magnify"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
+              <input id="search-box" type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
             </div>
           </li>
         </ul>
@@ -164,13 +164,13 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index">
+            <a id="home_href" class="nav-link" href="index">
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">主页</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="fanPortrait">
+            <a id="fan_href" class="nav-link" href="fanPortrait">
               <i class="mdi mdi-chart-pie menu-icon"></i>
               <span class="menu-title">粉丝画像</span>
             </a>
@@ -249,6 +249,21 @@
   <script src="static/js/china.js"></script>
   <script src="static/js/my_chart.js"></script>
   <!-- End custom js for this page-->
+  <!-- 搜索框 事件-->
+  <script>
+
+
+
+  $('#search-box').keypress(function (event){
+      if (event.keyCode == 13) {
+      //<!-- alert('你输入的内容为：' + $('#search-box').val()); -->
+      updateGender($("#search-box").val());
+      updateEquipment($("#search-box").val());
+      updateAge($("#search-box").val());
+      updateGeographical($("#search-box").val());
+    }
+  });
+  </script>
 </body>
 
 </html>

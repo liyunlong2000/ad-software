@@ -1,5 +1,4 @@
 
-
 var genderDistributionOptions = {
     responsive: true,
     animation: {
@@ -40,45 +39,51 @@ var genderDistributionOptions = {
     }
   };
 
-  $(document).ready(function () {
-    //gender
-    var $genderDistributionChart = $("#genderDistributionChart");
-    $.ajax({
-      url: '/genderDistributionChart',
-      success: function (data) {
-        var ctx = $genderDistributionChart[0].getContext("2d");
-        new Chart(ctx, {
-          type: 'doughnut',
-          data: {
-            datasets: [{
-              data: data.data,
-              backgroundColor: [
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(54, 162, 235, 0.5)',
-                'rgba(255, 206, 86, 0.5)',
-                'rgba(75, 192, 192, 0.5)',
-                'rgba(153, 102, 255, 0.5)',
-                'rgba(255, 159, 64, 0.5)'
-              ],
-              borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-              ],
-            }],
-            labels: data.labels,
-          },
-          options: genderDistributionOptions,
-        });
-      }
-    });
-    //equitment
+  function updateGender(user_id){
+  var $genderDistributionChart = $("#genderDistributionChart");
+  //alert(user_id)
+  $.ajax({
+    url: '/genderDistributionChart/',
+    data: {user_id:user_id},
+    method: 'GET',
+    success: function (data) {
+      var ctx = $genderDistributionChart[0].getContext("2d");
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: data.data,
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.5)',
+              'rgba(54, 162, 235, 0.5)',
+              'rgba(255, 206, 86, 0.5)',
+              'rgba(75, 192, 192, 0.5)',
+              'rgba(153, 102, 255, 0.5)',
+              'rgba(255, 159, 64, 0.5)'
+            ],
+            borderColor: [
+              'rgba(255,99,132,1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+            ],
+          }],
+          labels: data.labels,
+        },
+        options: genderDistributionOptions,
+      });
+    }
+  });
+  }
+
+  function updateEquipment(user_id){
     var $equipmentDistributionChart = $("#equipmentDistributionChart")
     $.ajax({
         url: '/equipmentDistributionChart',
+        data: {user_id:user_id},
+        method: 'GET',
         success: function (data) {
           var ctx = $equipmentDistributionChart[0].getContext("2d");
           new Chart(ctx, {
@@ -112,11 +117,28 @@ var genderDistributionOptions = {
           });
         }
       });
+  }
+
+  function updateAge(user_id){
+      //更新url
+    let searchParams = new URLSearchParams(window.location.search);
+    // 修改参数值
+    searchParams.set('user_id', user_id);
+    // 创建一个新的 URL，替换当前的 URL 但不刷新页面
+    window.history.replaceState({}, '', `${window.location.pathname}?${searchParams.toString()}`);
     
-    //age
+    //更新href链接
+    const queryStr = window.location.search; 
+    const home_href = document.getElementById('home_href'); 
+    home_href.href = '/index'+'?user_id='+user_id;
+    const fan_href = document.getElementById('fan_href'); 
+    fan_href.href = '/fanPortrait'+'?user_id='+user_id;
+
     var $ageDistributionChart = $("#ageDistributionChart");
     $.ajax({
       url: '/ageDistributionChart',
+      data: {user_id:user_id},
+      method: 'GET',
       success: function (data) {
         var ctx = $ageDistributionChart[0].getContext("2d");
         new Chart(ctx, {
@@ -149,11 +171,14 @@ var genderDistributionOptions = {
         });
       }
     });
+  }
 
-    //geo
+  function updateGeographical(user_id){
     var $geographicalDistributionChart = $("#geographicalDistributionChart");
     $.ajax({
       url: '/geographicalDistributionChart',
+      data: {user_id:user_id},
+      method: 'GET',
       success: function (data) {
         var geographicalDistributionOptions={
             tooltip: {
@@ -198,5 +223,27 @@ var genderDistributionOptions = {
         geographicalDistributionChart.setOption(geographicalDistributionOptions); 
       }
     });
+  }
+
+  $(document).ready(function () {
+    
+    //获取参数
+    const search = window.location.search; // 获取当前 URL 中的查询字符串
+    const params = new URLSearchParams(search); // 创建 URLSearchParams 对象
+    user_id = params.get('user_id');
+
+    // alert(user_id)
+
+    //gender
+    updateGender(user_id);
+
+    //equitment
+    updateEquipment(user_id);
+    
+    //age
+    updateAge(user_id);
+
+    //geo
+    updateGeographical(user_id);
 });
 
