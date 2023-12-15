@@ -17,6 +17,7 @@ def search(request):
 def fanPortrait(request):
     return render(request, "fanPortrait.html")
 
+
 def genderDistributionChart(request):
     labels = ['男性','女性','中性']
     data=[]
@@ -77,3 +78,6 @@ def updateUserInfo(request):
     data['user_brief']='暂无'
     data['user_label']='暂无'
     return JsonResponse(data=data)
+
+def workAnalysis(request):
+    return render(request, "workAnalysis.html")

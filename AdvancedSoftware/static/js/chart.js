@@ -574,4 +574,47 @@ function randomData() {
       options: doughnutPieOptions
     });
   }
+
+  if($("#horizontalBarChart").length){
+    var horizontalBarChartCanvas = $("#horizontalBarChart").get(0).getContext("2d");
+    var horizontalBarChart = new Chart(horizontalBarChartCanvas,{
+      type: 'bar',
+      data: data,
+      options: options
+    })
+  }
+
+  if($("#horizontalBarChart1").length){
+    var horizontalBarChartCanvas1 = $("#horizontalBarChart1").get(0).getContext("2d");
+    var horizontalBarChart1 = new Chart(horizontalBarChartCanvas1,{
+      type: 'horizontalBar',
+      data: data,
+      options: options
+    })
+  }
+  if($("#viewsbar").length){
+    var viewsbarCanvas = $("#viewsbar").get(0).getContext("2d");
+    var viewsbar = new Chart(viewsbarCanvas,{
+      type: 'bar',
+      data: data,
+      options: options
+    })
+  }
+  if($("#barragesbar").length){
+    var barragesbarCanvas = $("#barragesbar").get(0).getContext("2d");
+    var barragesbar = new Chart(barragesbarCanvas,{
+      type: 'bar',
+      data: data,
+      options: options
+    })
+  }
+  if($("#commentsbar").length){
+    var commentsbarCanvas = $("#commentsbar").get(0).getContext("2d");
+    var commentsbar = new Chart(commentsbarCanvas,{
+      type: 'bar',
+      data: data,
+      options: options
+    })
+  }
+
 });

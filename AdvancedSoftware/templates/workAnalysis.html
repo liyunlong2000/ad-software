@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Majestic Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../static/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../static/vendors/base/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="../staic/images/favicon.png" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="navbar-brand-wrapper d-flex justify-content-center">
+        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
+          <a class="navbar-brand brand-logo" href="index"><img src="../static/images/logo.svg" alt="logo"/></a>
+          <a class="navbar-brand brand-logo-mini" href="index"><img src="../static/images/logo-mini.svg" alt="logo"/></a>
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="mdi mdi-sort-variant"></span>
+          </button>
+        </div>  
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav mr-lg-4 w-100">
+          <li class="nav-item nav-search d-none d-lg-block w-100">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="search">
+                  <i class="mdi mdi-magnify"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown me-1">
+            <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-bs-toggle="dropdown">
+              <i class="mdi mdi-message-text mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                    <img src="../static/images/faces/face4.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="item-content flex-grow">
+                  <h6 class="ellipsis font-weight-normal">David Grey
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    The meeting is cancelled
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                    <img src="../static/images/faces/face2.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="item-content flex-grow">
+                  <h6 class="ellipsis font-weight-normal">Tim Cook
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    New product launch
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                    <img src="../static/images/faces/face3.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="item-content flex-grow">
+                  <h6 class="ellipsis font-weight-normal"> Johnson
+                  </h6>
+                  <p class="font-weight-light small-text text-muted mb-0">
+                    Upcoming board meeting
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown me-4">
+            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
+              <i class="mdi mdi-bell mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                  <div class="item-icon bg-success">
+                    <i class="mdi mdi-information mx-0"></i>
+                  </div>
+                </div>
+                <div class="item-content">
+                  <h6 class="font-weight-normal">Application Error</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Just now
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                  <div class="item-icon bg-warning">
+                    <i class="mdi mdi-settings mx-0"></i>
+                  </div>
+                </div>
+                <div class="item-content">
+                  <h6 class="font-weight-normal">Settings</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Private message
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item">
+                <div class="item-thumbnail">
+                  <div class="item-icon bg-info">
+                    <i class="mdi mdi-account-box mx-0"></i>
+                  </div>
+                </div>
+                <div class="item-content">
+                  <h6 class="font-weight-normal">New user registration</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    2 days ago
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
+              <img src="../static/images/faces/face5.jpg" alt="profile"/>
+              <span class="nav-profile-name">Louis Barnett</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item">
+                <i class="mdi mdi-settings text-primary"></i>
+                Settings
+              </a>
+              <a class="dropdown-item">
+                <i class="mdi mdi-logout text-primary"></i>
+                Logout
+              </a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index">
+              <i class="mdi mdi-account-card-details  menu-icon"></i>
+              <span class="menu-title">账号概览</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="workAnalysis">
+              <i class="mdi mdi-chart-pie menu-icon"></i>
+              <span class="menu-title">作品分析</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="fanPortrait">
+              <i class="mdi mdi-account-search menu-icon"></i>
+              <span class="menu-title">粉丝画像</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="d-flex justify-content-between flex-wrap">
+                <div class="d-flex align-items-end flex-wrap">
+                  <div class="me-md-3 me-xl-5">
+                    <h2>统计分析</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="d-flex justify-content-between align-items-end flex-wrap">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-outline-secondary">近7天</button>
+                <button type="button" class="btn btn-outline-secondary">近30天</button>
+                <button type="button" class="btn btn-outline-secondary">近90天</button>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="d-flex align-items-end flex-wrap">
+                <div class="d-flex justify-content-between flex-wrap">
+                  <div class="mt-2 mt-xl-3">
+                    <h4>基础数据</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body dashboard-tabs p-0">
+                  <div class="tab-content py-0 px-0">
+                    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                      <div class="d-flex flex-wrap justify-content-xl-between">
+                        <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                          <i class="mdi mdi-eye me-3 icon-lg text-success"></i>
+                          <div class="d-flex flex-column justify-content-around">
+                            <h6 class="me-5 mb-0" style="color: grey;">集均播放</h6>
+                            <h3 class="me-5 mb-0">195.7W</h3>
+                          </div>
+                          <div class="d-flex flex-column justify-content-around">
+                            <div class="row" style="white-space: nowrap;">
+                              <div class="col">
+                                <h6 class="me-2 mb-1" style="color: grey;">同期对比：</h6>
+                              </div>
+                              <div class="col">
+                                <h6 class="me-2 mb-0">4628.5%</h6>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <h6 class="me-2 mb-0" style="color: grey;">超过<strong>100.0%</strong>的知识UP主</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                          <i class="mdi mdi-bullhorn icon-lg me-3 text-info"></i>
+                          <div class="d-flex flex-column justify-content-around">
+                            <h6 class="me-5 mb-0" style="color: grey;">集均弹幕</h6>
+                            <h3 class="me-5 mb-0">6.5W</h3>
+                          </div>
+                          <div class="d-flex flex-column justify-content-around">
+                            <div class="row" style="white-space: nowrap;">
+                              <div class="col">
+                                <h6 class="me-2 mb-0" style="color: grey;">同期对比：</h6>
+                              </div>
+                              <div class="col">
+                                <h6 class="me-2 mb-0">4628.50%</h6>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <h6 class="me-2 mb-0" style="color: grey;">超过<strong>100.0%</strong>的知识UP主</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                          <i class="mdi mdi-comment-text me-3 icon-lg text-primary"></i>
+                          <div class="d-flex flex-column justify-content-around">
+                            <h6 class="me-5 mb-0" style="color: grey;">集均评论</h6>
+                            <h3 class="me-5 mb-0">8619</h3>
+                          </div>
+                          <div class="d-flex flex-column justify-content-around">
+                            <div class="row" style="white-space: nowrap;">
+                              <div class="col">
+                                <h6 class="me-2 mb-1" style="color: grey;">同期对比：</h6>
+                              </div>
+                              <div class="col">
+                                <h6 class="me-2 mb-0">1178.80%</h6>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <h6 class="me-2 mb-0" style="color: grey;">超过<strong>100.0%</strong>的知识UP主</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="d-flex align-items-end flex-wrap">
+                <div class="d-flex justify-content-between flex-wrap">
+                  <div class="mt-2 mt-xl-3">
+                    <h4>三连数据</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body dashboard-tabs p-0">
+                  <div class="tab-content py-0 px-0">
+                    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                      <div class="d-flex flex-wrap justify-content-xl-between">
+                        <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                          <i class=" mdi mdi-share me-3 icon-lg text-primary"></i>
+                          <div class="d-flex flex-column justify-content-around">
+                            <h6 class="me-5 mb-0" style="color: grey;">集均分享</h6>
+                            <h3 class="me-5 mb-0">7080</h3>
+                          </div>
+                          <div class="d-flex flex-column justify-content-around">
+                            <div class="row" style="white-space: nowrap;">
+                              <div class="col">
+                                <h6 class="me-2 mb-1" style="color: grey;">同期对比：</h6>
+                              </div>
+                              <div class="col">
+                                <h6 class="me-2 mb-0">876.60%</h6>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <h6 class="me-2 mb-0" style="color: grey;">超过<strong>100.0%</strong>的知识UP主</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                          <i class="mdi mdi-thumb-up icon-lg me-3 text-danger"></i>
+                          <div class="d-flex flex-column justify-content-around">
+                            <h6 class="me-5 mb-0" style="color: grey;">集均获赞</h6>
+                            <h3 class="me-5 mb-0">16.6W</h3>
+                          </div>
+                          <div class="d-flex flex-column justify-content-around">
+                            <div class="row" style="white-space: nowrap;">
+                              <div class="col">
+                                <h6 class="me-2 mb-0" style="color: grey;">同期对比：</h6>
+                              </div>
+                              <div class="col">
+                                <h6 class="me-2 mb-0">754.70%</h6>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <h6 class="me-2 mb-0" style="color: grey;">超过<strong>100.0%</strong>的知识UP主</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                          <i class="mdi mdi-coin me-3 icon-lg text-muted"></i>
+                          <div class="d-flex flex-column justify-content-around">
+                            <h6 class="me-5 mb-0" style="color: grey;">集均投币</h6>
+                            <h3 class="me-5 mb-0">4.2W</h3>
+                          </div>
+                          <div class="d-flex flex-column justify-content-around">
+                            <div class="row" style="white-space: nowrap;">
+                              <div class="col">
+                                <h6 class="me-2 mb-1" style="color: grey;">同期对比：</h6>
+                              </div>
+                              <div class="col">
+                                <h6 class="me-2 mb-0">948.10%</h6>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <h6 class="me-2 mb-0" style="color: grey;">超过<strong>100.0%</strong>的知识UP主</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                          <i class="mdi mdi-briefcase me-3 icon-lg text-info"></i>
+                          <div class="d-flex flex-column justify-content-around">
+                            <h6 class="me-5 mb-0" style="color: grey;">集均投币</h6>
+                            <h3 class="me-5 mb-0">1.2W</h3>
+                          </div>
+                          <div class="d-flex flex-column justify-content-around">
+                            <div class="row" style="white-space: nowrap;">
+                              <div class="col">
+                                <h6 class="me-2 mb-1" style="color: grey;">同期对比：</h6>
+                              </div>
+                              <div class="col">
+                                <h6 class="me-2 mb-0">429.80%</h6>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <h6 class="me-2 mb-0" style="color: grey;">超过<strong>100.0%</strong>的知识UP主</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="d-flex align-items-end flex-wrap">
+                <div class="d-flex justify-content-between flex-wrap">
+                  <div class="mt-2 mt-xl-3">
+                    <h4>互动指标</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body dashboard-tabs p-0">
+                  <div class="tab-content py-0 px-0">
+                    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                      <div class="d-flex flex-wrap justify-content-xl-between">
+                        <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                          <i class="mdi mdi-contact-mail me-3 icon-lg text-dark"></i>
+                          <div class="d-flex flex-column justify-content-around">
+                            <h6 class="me-5 mb-0" style="color: grey;">互动率</h6>
+                            <h3 class="me-5 mb-0">0.1533</h3>
+                          </div>
+                          <div class="d-flex flex-column justify-content-around">
+                            <div class="row" style="white-space: nowrap;">
+                              <div class="col">
+                                <h6 class="me-2 mb-1" style="color: grey;">同期对比：</h6>
+                              </div>
+                              <div class="col">
+                                <h6 class="me-2 mb-0">23.60%</h6>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <h6 class="me-2 mb-0" style="color: grey;">超过<strong>100.0%</strong>的知识UP主</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
+                          <i class="mdi mdi-percent icon-lg me-3 text-warning"></i>
+                          <div class="d-flex flex-column justify-content-around">
+                            <h6 class="me-5 mb-0" style="color: grey;">赞粉比</h6>
+                            <h3 class="me-5 mb-0">0.007</h3>
+                          </div>
+                          <div class="d-flex flex-column justify-content-around">
+                            <div class="row" style="white-space: nowrap;">
+                              <div class="col">
+                                <h6 class="me-2 mb-0" style="color: grey;">同期对比：</h6>
+                              </div>
+                              <div class="col">
+                                <h6 class="me-2 mb-0">99.90%</h6>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <h6 class="me-2 mb-0" style="color: grey;">超过<strong>100.0%</strong>的知识UP主</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">视频时长分布</h4>
+                  <canvas id="doughnutChart"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">发布时间分布</h4>
+                  <canvas id="barChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="d-flex align-items-end flex-wrap">
+                <div class="d-flex justify-content-between flex-wrap">
+                  <div class="mt-2 mt-xl-3">
+                    <h4>分区表现</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <h4 class="col-lg-6 grid-margin"><strong>知识类</strong>是UP主最火的视频,集均播放数为197.5W</h4>
+            <h4 class="col-lg-6 grid-margin"><strong>知识类</strong>是UP主二次传播最广的视频,集均转发数为7080</h4>
+          </div>
+          <div class="row">
+            <h6 class="col-lg-6 grid-margin" style="color: grey;">·集均播放数TOP分区</h6>
+            <h6 class="col-lg-6 grid-margin" style="color: grey;">·集均转发数TOP分区</h6>
+          </div>
+          <div class="row">
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">集均播放数分区分布</h4>
+                  <canvas id="horizontalBarChart"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">集均转发数分区分布</h4>
+                  <canvas id="horizontalBarChart1"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="d-flex align-items-end flex-wrap">
+                <div class="d-flex justify-content-between flex-wrap">
+                  <div class="mt-2 mt-xl-3">
+                    <h4>作品表现</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body dashboard-tabs p-0">
+                  <ul class="nav nav-tabs px-4" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="views-tab" data-bs-toggle="tab" href="#views" role="tab" aria-controls="views" aria-selected="true">播放数</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="barrages-tab" data-bs-toggle="tab" href="#barrages" role="tab" aria-controls="barrages" aria-selected="false">弹幕数</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="comments-tab" data-bs-toggle="tab" href="#comments" role="tab" aria-controls="comments" aria-selected="false">评论数</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="shares-tab" data-bs-toggle="tab" href="#shares" role="tab" aria-controls="shares" aria-selected="false">分享数</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="likes-tab" data-bs-toggle="tab" href="#likes" role="tab" aria-controls="likes" aria-selected="false">点赞数</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="coins-tab" data-bs-toggle="tab" href="#coins" role="tab" aria-controls="coins" aria-selected="false">投币数</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="collections-tab" data-bs-toggle="tab" href="#collections" role="tab" aria-controls="collections" aria-selected="false">收藏数</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content py-0 px-0">
+                    <div class="tab-pane fade show active" id="views" role="tabpanel" aria-labelledby="view-tabs">
+                      <div class="row">
+                        <div class="col" style="display: flex;">
+                            <h6 style="margin-top: 20px; margin-left: 20px;margin-right: 40px;"><span style="font-weight: normal; color: gray;">·近7天作品中最低播放数为</span><strong>5.32w</strong></h6>
+                            <h6 style="margin-top: 20px; margin-right: 40px;"><span style="font-weight: normal; color: gray;">·最高播放数为</span><strong>17.68w</strong></h6>
+                            <h6 style="margin-top: 20px;"><span style="font-weight: normal; color: gray;">·播放平均值为</span><strong>12.46w</strong></h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <canvas id="viewsbar"></canvas>
+                      </div>
+                      <!-- <div class="row justify-content-center">
+                        <div class="col-6">
+                            <canvas id="viewsbar" style="width: 100%; height: 300px;"></canvas>
+                        </div>
+                      </div> -->
+                    </div>
+                    <div class="tab-pane fade" id="barrages" role="tabpanel" aria-labelledby="barrages-tab">
+                      <div class="row">
+                        <div class="col" style="display: flex;">
+                            <h6 style="margin-top: 20px; margin-left: 20px;margin-right: 40px;"><span style="font-weight: normal; color: gray;">·近7天作品中最低弹幕数为</span><strong>70</strong></h6>
+                            <h6 style="margin-top: 20px; margin-right: 40px;"><span style="font-weight: normal; color: gray;">·最高弹幕数为</span><strong>2937</strong></h6>
+                            <h6 style="margin-top: 20px;"><span style="font-weight: normal; color: gray;">·弹幕平均值为</span><strong>1125.71</strong></h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <canvas id="barragesbar"></canvas>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="comments-tab">
+                      <div class="row">
+                        <div class="col" style="display: flex;">
+                            <h6 style="margin-top: 20px; margin-left: 20px;margin-right: 40px;"><span style="font-weight: normal; color: gray;">·近7天作品中最低评论数为</span><strong>153</strong></h6>
+                            <h6 style="margin-top: 20px; margin-right: 40px;"><span style="font-weight: normal; color: gray;">·最高评论数为</span><strong>610</strong></h6>
+                            <h6 style="margin-top: 20px;"><span style="font-weight: normal; color: gray;">·评论平均值为</span><strong>354.57</strong></h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <canvas id="commentsbar"></canvas>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="shares" role="tabpanel" aria-labelledby="shares-tab">
+                      <div class="row">
+                        <div class="col" style="display: flex;">
+                            <h6 style="margin-top: 20px; margin-left: 20px;margin-right: 40px;"><span style="font-weight: normal; color: gray;">·近7天作品中最低分享数为</span><strong>54</strong></h6>
+                            <h6 style="margin-top: 20px; margin-right: 40px;"><span style="font-weight: normal; color: gray;">·最高分享数为</span><strong>110</strong></h6>
+                            <h6 style="margin-top: 20px;"><span style="font-weight: normal; color: gray;">·分享平均值为</span><strong>76.57</strong></h6>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <!-- <div id="sharesbar" style="width: 800px;height:400px;"></div> -->
+                        <!-- <div id="sharesbar" style="width: 1500px; height: 400px;"></div> -->
+
+                        <!-- <div id="sharesbar"></div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="d-flex align-items-end flex-wrap">
+                <div class="d-flex justify-content-between flex-wrap">
+                  <div class="mt-2 mt-xl-3">
+                    <h4>作品热词</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row" style="display: flex; justify-content: center;">
+            <div class="col-lg-6 grid-margin stretch-card" style="display: inline-block;">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title" style="text-align: left;">·弹幕热词</h4>
+                  <div id="wordCloudChart" style="width: 450px; height: 450px; margin: 0 auto;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 grid-margin stretch-card" style="display: inline-block;">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title" style="text-align: left;">·评论热词</h4>
+                  <div id="wordCloudChart1" style="width: 450px; height: 450px; margin: 0 auto;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+        <div class="d-sm-flex justify-content-center justify-content-sm-between">
+          <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © <a href="https://www.bootstrapdash.com/" target="_blank">bootstrapdash.com </a>2021</span>
+          <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Only the best <a href="https://www.bootstrapdash.com/" target="_blank"> Bootstrap dashboard  </a> templates</span>
+        </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="../static/vendors/base/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <script src="../static/vendors/chart.js/Chart.min.js"></script>
+    <script src="../static/js/echarts.js"></script>
+    <script src="../static/js/echarts-wordcloud.js"></script>
+    <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="../static/js/off-canvas.js"></script>
+  <script src="../static/js/hoverable-collapse.js"></script>
+  <script src="../static/js/template.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="../static/js/chart.js"></script>
+  <script src="../static/js/wordCloudChart.js"></script>
+  <!-- <script src="../static/js/myEcharts.js"></script> -->
+  <!-- End custom js for this page-->
+</body>
+
+</html>
