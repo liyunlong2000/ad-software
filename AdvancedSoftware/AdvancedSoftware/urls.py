@@ -15,5 +15,5 @@ urlpatterns = [
     path('geographicalDistributionChart/',views.geographicalDistributionChart),
     url(r'^search/$',views.search),
     url(r'^updateUserInfo/$',views.updateUserInfo),
-    path('workAnalysis', views.workAnalysis),
+    url(r'^workAnalysis/$',views.workAnalysis),
 ]

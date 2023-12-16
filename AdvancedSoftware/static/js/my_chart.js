@@ -120,20 +120,6 @@ var genderDistributionOptions = {
   }
 
   function updateAge(user_id){
-      //更新url
-    let searchParams = new URLSearchParams(window.location.search);
-    // 修改参数值
-    searchParams.set('user_id', user_id);
-    // 创建一个新的 URL，替换当前的 URL 但不刷新页面
-    window.history.replaceState({}, '', `${window.location.pathname}?${searchParams.toString()}`);
-    
-    //更新href链接
-    const queryStr = window.location.search; 
-    const home_href = document.getElementById('home_href'); 
-    home_href.href = '/index'+'?user_id='+user_id;
-    const fan_href = document.getElementById('fan_href'); 
-    fan_href.href = '/fanPortrait'+'?user_id='+user_id;
-
     var $ageDistributionChart = $("#ageDistributionChart");
     $.ajax({
       url: '/ageDistributionChart',
@@ -224,26 +210,3 @@ var genderDistributionOptions = {
       }
     });
   }
-
-  $(document).ready(function () {
-    
-    //获取参数
-    const search = window.location.search; // 获取当前 URL 中的查询字符串
-    const params = new URLSearchParams(search); // 创建 URLSearchParams 对象
-    user_id = params.get('user_id');
-
-    // alert(user_id)
-
-    //gender
-    updateGender(user_id);
-
-    //equitment
-    updateEquipment(user_id);
-    
-    //age
-    updateAge(user_id);
-
-    //geo
-    updateGeographical(user_id);
-});
-

@@ -72,7 +72,7 @@ def geographicalDistributionChart(request):
 
 def updateUserInfo(request):
     user_id = request.GET.get('user_id')
-    print("gender id:",user_id)
+    print("user id is:",user_id)
     data={}
     data['user_id']='313009293'
     data['user_brief']='暂无'

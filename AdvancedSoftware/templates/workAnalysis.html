@@ -38,7 +38,7 @@
                   <i class="mdi mdi-magnify"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
+              <input id="search-box" type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
             </div>
           </li>
         </ul>
@@ -164,19 +164,19 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index">
+            <a id="home_href" class="nav-link" href="index">
               <i class="mdi mdi-account-card-details  menu-icon"></i>
               <span class="menu-title">账号概览</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="workAnalysis">
+            <a id="analysis_href" class="nav-link" href="workAnalysis">
               <i class="mdi mdi-chart-pie menu-icon"></i>
               <span class="menu-title">作品分析</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="fanPortrait">
+            <a id="fan_href" class="nav-link" href="fanPortrait">
               <i class="mdi mdi-account-search menu-icon"></i>
               <span class="menu-title">粉丝画像</span>
             </a>
@@ -699,6 +699,32 @@
   <script src="../static/js/wordCloudChart.js"></script>
   <!-- <script src="../static/js/myEcharts.js"></script> -->
   <!-- End custom js for this page-->
+
+  <script src="../static/js/function.js"></script>
+  <script src="../static/js/analysis.js"></script>
+  <!-- 搜索框 事件-->
+  <script>
+     //加载事件
+     $(document).ready(function () {
+      //获取参数
+      const search = window.location.search; // 获取当前 URL 中的查询字符串
+      const params = new URLSearchParams(search); // 创建 URLSearchParams 对象
+      user_id = params.get('user_id');
+      //更新url
+      updateUrl(user_id);
+      //更新链接的hrel
+      updateHref(user_id);
+    });
+
+    $('#search-box').keypress(function (event){
+      if (event.keyCode == 13) {
+        //更新url
+        updateUrl($("#search-box").val());
+        //更新链接的hrel
+        updateHref($("#search-box").val());
+      }
+    })
+  </script>
 </body>
 
 </html>
