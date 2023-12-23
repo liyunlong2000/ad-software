@@ -232,8 +232,8 @@
                   <div class="tab-content py-0 px-0">
                     <div class="tab-pane fade show active" id="overvie3" role="tabpanel" aria-labelledby="overview-tab">
 <!--                      账号相关信息栏-->
-                      <div class="col-md-6 d-flex flex-wrap justify-content-xl-between">
-                        <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-1 item">
+                      <div class="col-md-8 d-flex flex-wrap justify-content-xl-between">
+                        <div class="col-md-2 d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-1 item">
                           <div class="d-flex flex-column justify-content-around">
                             <div class="py-1">
                               {% load static %}
@@ -241,20 +241,20 @@
                             </div>
                           </div>
                         </div>
-                        <div class="d-flex flex-grow-1 align-items-center justify-content-center p-1 item">
+                        <div class="col-md-4  d-flex flex-grow-1 align-items-center justify-content-center p-1 item">
                           <div class="d-flex flex-column justify-content-around">
-                            <h4 class="me-2 mb-2">良田田田田</h4>
-                            <div class="account-info mb-2">
-                              <small class="mb-1 text-muted">账 号 信 息</small>
+                            <h4 id="user_name" class="me-2 mb-4">良田田田田</h4>
+                            <div class="account-info mb-4">
+                              <small class="mb-1 text-muted">UID</small>
                               <span id="user_id" class="info-tag text-black">480959917</span>
                             </div>
-                            <div class="account-info mb-2">
+                            <div class="account-info mb-4">
                               <small class="mb-1 text-muted">账 号 简 介</small>
                               <span id="user_brief" class="info-tag text-black">各花各有各花香</span>
                             </div>
-                            <div class="account-info mb-2">
-                              <small class="mb-1 text-muted">标&emsp;&emsp;&ensp;签</small>
-                              <span id="user_label" class="info-tag text-black">暂无</span>
+                            <div class="account-info mb-4">
+                              <small class="mb-1 text-muted">账 号 等 级</small>
+                              <span id="user_level" class="info-tag text-black">暂无</span>
                             </div>
                           </div>
                         </div>
@@ -262,32 +262,32 @@
 <!--                      图标行-->
                       <div class="d-flex flex-wrap justify-content-xl-between">
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-movie me-3 icon-lg text-danger"></i>
+                          <i class="mdi mdi-account-multiple me-3 icon-lg text-danger"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">七日作品数</small>
-                            <h5 id="works_num" class="me-2 mb-0">577545</h5>
+                            <small class="mb-1 text-muted">粉丝数</small>
+                            <h5 id="user_fans" class="me-2 mb-0">577545</h5>
                           </div>
                         </div>
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <i class="mdi mdi-eye me-3 icon-lg text-success"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">七日观看数</small>
-                            <h5 id="views_num" class="me-2 mb-0">9833550</h5>
+                            <small class="mb-1 text-muted">观看数</small>
+                            <h5 id="user_view" class="me-2 mb-0">9833550</h5>
                           </div>
                         </div>
                         <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                          <i class="mdi mdi-download me-3 icon-lg text-warning"></i>
+                          <i class="mdi mdi-account-plus me-3 icon-lg text-warning"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">七日下载量</small>
-                            <h5 id="downloads_num" class="me-2 mb-0">2233783</h5>
+                            <small class="mb-1 text-muted">关注数</small>
+                            <h5 id="user_follows" class="me-2 mb-0">2233783</h5>
                           </div>
                         </div>
                         <div class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                           <!--                          <i class="mdi mdi-flag me-3 icon-lg text-danger"></i>-->
-                          <i class="mdi mdi-message-text me-3 icon-lg text-gray"></i>
+                          <i class="mdi mdi-thumb-up-outline me-3 icon-lg text-gray"></i>
                           <div class="d-flex flex-column justify-content-around">
-                            <small class="mb-1 text-muted">七日评论数</small>
-                            <h5 id="comments_num" class="me-2 mb-0">3497843</h5>
+                            <small class="mb-1 text-muted">点赞数</small>
+                            <h5 id="user_likes" class="me-2 mb-0">3497843</h5>
                           </div>
                         </div>
                       </div>

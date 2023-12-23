@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 import random
+from ._utils import *
 
 current_id=None
 
@@ -10,8 +11,8 @@ def index(request):
 def search(request):
     id=request.GET.get("user_id")
     current_id=id
-    print("get id from frontend:",id)
-    print("current_id:",current_id)
+    # print("get id from frontend:",id)
+    # print("current_id:",current_id)
     return JsonResponse(data={})
 
 def fanPortrait(request):
@@ -19,16 +20,24 @@ def fanPortrait(request):
 
 
 def genderDistributionChart(request):
-    labels = ['男性','女性','中性']
-    data=[]
+    # labels = ['男性','女性','保密']
+    # data=[]
+    # user_id = request.GET.get('user_id')
+    # print("gender id:",user_id)
+    # if user_id=="":
+    #     data = [80,0,20]
+    # else:
+    #     data = [40,40,20]
+    # print(data)
     user_id = request.GET.get('user_id')
-    print("gender id:",user_id)
-    if user_id=="":
-        data = [80,0,20]
+    gender_data=get_gender_info(user_id)
+    if gender_data :
+        gender_keys = list(gender_data.keys())
+        gender_values = list(gender_data.values())
     else:
-        data = [40,40,20]
-    print(data)
-    return JsonResponse(data={'labels':labels,'data':data})
+        gender_keys = ['男性','女性','保密']
+        gender_values = [40,40,20]
+    return JsonResponse(data={'labels':gender_keys,'data':gender_values})
 
 def ageDistributionChart(request):
     labels = [
@@ -44,6 +53,25 @@ def equipmentDistributionChart(request):
     data=[28, 28.06, 16.05, 9.57, 7.75, 9.79]
     labels=["apple(28.76%)", "huawei(28.06%)", "xiaomi(16.05%)", "vivo(9.57%)", "oppo(7.75%)", "其它(9.79%)"]
     return JsonResponse(data={'labels':labels,'data':data})
+
+def loveWordCloud(request):
+    user_id = request.GET.get('user_id')
+    love_data=get_love_info(user_id)
+    # print(love_data)
+    return JsonResponse(data={'lovedata':love_data})
+
+def gameWordCloud(request):
+    user_id = request.GET.get('user_id')
+    game_data=get_game_info(user_id)
+    # print("game:")
+    # print(game_data)
+    return JsonResponse(data={'gamedata':game_data})
+
+def typeWordCloud(request):
+    user_id = request.GET.get('user_id')
+    type_data=get_type_info(user_id)
+    # print(type_data)
+    return JsonResponse(data={'typedata':type_data})
 
 def randomData():
     return round(random.random() * 500) 
@@ -72,11 +100,23 @@ def geographicalDistributionChart(request):
 
 def updateUserInfo(request):
     user_id = request.GET.get('user_id')
-    print("user id is:",user_id)
-    data={}
-    data['user_id']='313009293'
-    data['user_brief']='暂无'
-    data['user_label']='暂无'
+    # print("user id is:",user_id)
+    data={}    
+    data=get_user_info()
+    if user_id in data:
+        item=data[user_id][-1]
+        # print(item)
+        data['user_id']=item["uid"]
+        data['user_name']=item["name"]
+        data['user_sex']=item["sex"]
+        data['user_birthday']=item["birthday"]
+        data['user_brief']=item["sign"]
+        data['user_label']='暂无'
+        data['user_level']=item["level"]
+        data['user_fans']=item["fans"]
+        data['user_follows']=item["follows"]
+        data['user_view']=item["view"]
+        data['user_likes']=item["likes"]        
     return JsonResponse(data=data)
 
 def workAnalysis(request):

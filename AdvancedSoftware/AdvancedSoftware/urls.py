@@ -16,4 +16,7 @@ urlpatterns = [
     url(r'^search/$',views.search),
     url(r'^updateUserInfo/$',views.updateUserInfo),
     url(r'^workAnalysis/$',views.workAnalysis),
+    url(r'^loveWordCloudChart/$',views.loveWordCloud),
+    url(r'^gameWordCloudChart/$',views.gameWordCloud),
+    url(r'^typeWordCloudChart/$',views.typeWordCloud),
 ]

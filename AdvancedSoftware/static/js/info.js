@@ -8,12 +8,21 @@ function updateUserInfo(user_id){
           // alert("success!")
           document.getElementById('user_id').innerHTML= data.user_id;
           document.getElementById('user_brief').innerHTML= data.user_brief;
-          document.getElementById('user_label').innerHTML= data.user_label;
-          document.getElementById('works_num').innerHTML= data.works_num;
-          document.getElementById('views_num').innerHTML= data.views_num;
-          document.getElementById('downloads_num').innerHTML= data.downloads_num;
-          document.getElementById('comments_num').innerHTML= data.comments_num;
+          // document.getElementById('user_label').innerHTML= data.user_label;
+          document.getElementById('user_name').innerHTML= data.user_name;
 
+          // document.getElementById('user_birthday').innerHTML= data.user_birthday;
+          // alert("data.user_birthday")
+          // alert(data.user_level)
+          document.getElementById('user_level').innerHTML= data.user_level;
+
+
+          document.getElementById('user_fans').innerHTML= data.user_fans;
+          document.getElementById('user_follows').innerHTML= data.user_follows;
+          document.getElementById('user_view').innerHTML= data.user_view;
+ 
+          document.getElementById('user_likes').innerHTML= data.user_likes;
+          
           document.getElementById('recent_works_num').innerHTML= data.recent_works_num;
           document.getElementById('hot_works_num').innerHTML= data.hot_works_num;
 

@@ -198,8 +198,9 @@
             <div class="col-lg-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">设备分布</h4>
-                  <canvas id="equipmentDistributionChart"></canvas>
+                  <h4 class="card-title">喜好热词</h4>
+                  <!-- <canvas id="equipmentDistributionChart"></canvas> -->
+                  <div id="loveWordCloudChart" style="width: 450px; height: 350px; margin: 0 auto;"></div>
                 </div>
               </div>
             </div>
@@ -208,16 +209,16 @@
             <div class="col-lg-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">年龄分布</h4>
-                  <canvas id="ageDistributionChart"></canvas>
+                  <h4 class="card-title">喜爱游戏</h4>
+                  <div id="gameWordCloudChart" style="width: 450px; height: 350px; margin: 0 auto;"></div>
                 </div>
               </div>
             </div>
             <div class="col-lg-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">地域分布</h4>
-                  <div id="geographicalDistributionChart" style="display:bloack; height: 320px; width: 484px;"></div>
+                  <h4 class="card-title">游戏类型</h4>
+                  <div id="typeWordCloudChart" style="display:bloack; height: 320px; width: 484px;"></div>
                 </div>
               </div>
             </div>
@@ -253,6 +254,7 @@
   <!-- Custom js for this page-->
   <script src="static/js/chart.js"></script>
   <script src="static/js/echarts.js"></script>
+  <script src="static/js/echarts-wordcloud.js"></script>
   <script src="static/js/china.js"></script>
   <script src="static/js/function.js"></script>
   <script src="static/js/my_chart.js"></script>
@@ -271,12 +273,12 @@
       updateHref(user_id);
       //gender
       updateGender(user_id);
-      //equitment
-      updateEquipment(user_id);
-      //age
-      updateAge(user_id);
-      //geo
-      updateGeographical(user_id);
+      //loveWordCloud
+      updateloveWordCloud(user_id);
+      //gameWordCloud
+      updategameWordCloud(user_id);
+      //typeWordCloud
+      updatetypeWordCloud(user_id);
   });
   
 
@@ -289,9 +291,11 @@
       updateHref($("#search-box").val());
       //<!-- alert('你输入的内容为：' + $('#search-box').val()); -->
       updateGender($("#search-box").val());
-      updateEquipment($("#search-box").val());
-      updateAge($("#search-box").val());
-      updateGeographical($("#search-box").val());
+      updateloveWordCloud($("#search-box").val());
+      //gameWordCloud
+      updategameWordCloud($("#search-box").val());
+      //typeWordCloud
+      updatetypeWordCloud($("#search-box").val());
     }
   });
   </script>
